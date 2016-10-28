@@ -6,7 +6,7 @@ class Api::PokemonController < ApplicationController
   end
 
   def show
-    @items = Item.find_by(pokemon_id: params[:id])
+    @items = Item.where("pokemon_id = #{params[:id]}")
     @pokemon = Pokemon.find(params[:id])
     # render json: @pokemon
   end

@@ -8,8 +8,11 @@ const PokemonDetailReducer = (state = _defaultState, action) => {
 
   switch(action.type) {
     case RECEIVE_POKEMON:
-      return merge({}, state, action.pokemon);
+
+      return action.pokemon;
     default:
       return state;
   }
 };
+
+export default PokemonDetailReducer;
